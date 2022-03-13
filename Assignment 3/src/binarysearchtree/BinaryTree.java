@@ -5,7 +5,35 @@ public class BinaryTree {
 
 	BinaryTree() {
 		root = null;
-	};
+	}
+
+	public void addNode (Node node) {
+		if (root == null) {
+			root = node;
+		}
+		else {
+			insertNode (root, node);
+		}
+	}
+
+	public void insertNode (Node parent, Node node) {
+		if(parent.key > node.key) {
+			if(parent.left == null) {
+				parent.left = node;
+			}
+			else {
+				insertNode(parent.left, node);
+			}
+		}
+		else {
+			if(parent.right == null) {
+				parent.right = node;
+			}
+			else {
+				insertNode(parent.right, node);
+			}
+		}
+	}
 
 	//method to print inorder traversal using recursive
 	public void printInorder(Node node) {
