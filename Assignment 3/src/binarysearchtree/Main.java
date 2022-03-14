@@ -50,10 +50,5 @@ public class Main {
 		} catch (Exception e) {
 			System.out.println("Error: Sibling doesn't exist"); //prints error message if sibling doesn't exist
 		}
-		//for (int i = 0; i<treeData.length; i++) System.out.print(treeData[i] + " ");
-
-
 	}
-
-
 }
