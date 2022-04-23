@@ -104,7 +104,7 @@ public class Main {
 				new Edge(7, 8, 10)
 				);
 
-		// total number of nodes in the graph (labelled from 0 to 4)
+		// total number of nodes in the graph
 		int n = 9;
 
 		// construct graph
