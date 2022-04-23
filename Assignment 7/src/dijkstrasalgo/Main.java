@@ -97,10 +97,10 @@ public class Main {
 				new Edge(3, 7, 21),
 				new Edge(4, 5, 2),
 				new Edge(4, 6, 2),
-				new Edge(4, 7, 18),
-				new Edge(5, 7, 15),
-				new Edge(5, 8, 6),
-				new Edge(6, 7, 25),
+				new Edge(4, 8, 18),
+				new Edge(5, 8, 15),
+				new Edge(5, 7, 6),
+				new Edge(6, 8, 25),
 				new Edge(7, 8, 10)
 				);
 
@@ -110,6 +110,9 @@ public class Main {
 		// construct graph
 		Graph graph = new Graph(edges, n);
 
+		System.out.println("Number 1 is 0->8" +
+				"\nNumber 2 is 0->7");
+		
 		// run the Dijkstra’s algorithm from every node
 		for (int source = 0; source < n; source++) {
 			findShortestPaths(graph, source, n);
