@@ -12,7 +12,6 @@ public class Main {
 		}
 	}
 
-	// Run Dijkstra’s algorithm on a given graph
 	public static void findShortestPaths(Graph graph, int source, int n)
 	{
 		// create a min-heap and push source node having distance 0
@@ -24,7 +23,7 @@ public class Main {
 		List<Integer> dist;
 		dist = new ArrayList<>(Collections.nCopies(n, Integer.MAX_VALUE));
 
-		// distance from the source to itself is zero
+		// distance of source to itself is 0
 		dist.set(source, 0);
 
 		// boolean array to track vertices for which minimum
@@ -110,9 +109,8 @@ public class Main {
 		// construct graph
 		Graph graph = new Graph(edges, n);
 
-		System.out.println("Number 1 is 0->8" +
-				"\nNumber 2 is 0->7");
-		
+		System.out.println("Number 1 is 0->8\nNumber 2 is 0->7\n");
+
 		// run the Dijkstra’s algorithm from every node
 		for (int source = 0; source < n; source++) {
 			findShortestPaths(graph, source, n);
