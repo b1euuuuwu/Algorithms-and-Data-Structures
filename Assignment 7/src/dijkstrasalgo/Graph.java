@@ -8,8 +8,7 @@ public class Graph {
 	List<List<Edge>> adjList = null;
 
 	// Constructor
-	Graph(List<Edge> edges, int n)
-	{
+	Graph(List<Edge> edges, int n) {
 		adjList = new ArrayList<>();
 
 		for (int i = 0; i < n; i++) {

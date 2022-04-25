@@ -3,17 +3,14 @@ package dijkstrasalgo;
 import java.util.*;
 
 public class Main {
-	private static void getRoute(int[] prev, int i, List<Integer> route)
-	{
-		if (i >= 0)
-		{
+	private static void getRoute(int[] prev, int i, List<Integer> route) {
+		if (i >= 0) {
 			getRoute(prev, prev[i], route);
 			route.add(i);
 		}
 	}
 
-	public static void findShortestPaths(Graph graph, int source, int n)
-	{
+	public static void findShortestPaths(Graph graph, int source, int n) {
 		// create a min-heap and push source node having distance 0
 		PriorityQueue<Node> minHeap;
 		minHeap = new PriorityQueue<>(Comparator.comparingInt(node -> node.weight));
@@ -45,14 +42,12 @@ public class Main {
 			int u = node.vertex;
 
 			// do for each neighbor `v` of `u`
-			for (Edge edge: graph.adjList.get(u))
-			{
+			for (Edge edge: graph.adjList.get(u)) {
 				int v = edge.dest;
 				int weight = edge.weight;
 
 				// Relaxation step
-				if (!done[v] && (dist.get(u) + weight) < dist.get(v))
-				{
+				if (!done[v] && (dist.get(u) + weight) < dist.get(v)) {
 					dist.set(v, dist.get(u) + weight);
 					prev[v] = u;
 					minHeap.add(new Node(v, dist.get(v)));
@@ -65,10 +60,8 @@ public class Main {
 
 		List<Integer> route = new ArrayList<>();
 
-		for (int i = 0; i < n; i++)
-		{
-			if (i != source && dist.get(i) != Integer.MAX_VALUE)
-			{
+		for (int i = 0; i < n; i++) {
+			if (i != source && dist.get(i) != Integer.MAX_VALUE) {
 				getRoute(prev, i, route);
 				System.out.printf("Path (%d —> %d): Minimum cost = %d, Route = %s\n",
 						source, i, dist.get(i), route);
@@ -77,8 +70,7 @@ public class Main {
 		}
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		// initialize edges as per the above diagram
 		// (u, v, w) represent edge from vertex `u` to vertex `v` having weight `w`
 		// {a, b, c, d, e, f, g, h, i} == {0, 1, 2, 3, 4, 5, 6, 7, 8}
