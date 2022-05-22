@@ -1,8 +1,5 @@
 package StringMatching;
 
-import java.lang.reflect.Method;
-import java.util.Scanner;
-
 public class Main {
 	public static void execTime(String text, String pattern) {
 		long start1 = System.nanoTime();
