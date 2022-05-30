@@ -20,9 +20,8 @@ public class Main {
         }
 
         double convexHullLength = Geometry.getConvexHullLength(hull);
-        double getConvexHullArea = Geometry.getConvexHullArea(hull);
-        System.out.println("1. Convex Hull length: " + convexHullLength);
-        System.out.println("2. Convex Hull Area: " + getConvexHullArea);
-
+        double convexHullArea = Geometry.getConvexHullArea(hull);
+        System.out.println("1. Convex Hull Area: " + convexHullArea);
+        System.out.println("2. Convex Hull Length: " + convexHullLength);
     }
 }
