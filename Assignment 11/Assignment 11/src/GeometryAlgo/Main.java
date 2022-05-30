@@ -13,10 +13,16 @@ public class Main {
 
         Point[] hull = Geometry.convexHull(points);
 
-        System.out.println("Convex Hull:");
+        System.out.println("1. Convex Hull:");
         for (int i = 0; i < hull.length; i++) {
             if (hull[i] != null)
                 System.out.println(hull[i]);
         }
+
+        double convexHullLength = Geometry.getConvexHullLength(hull);
+        double getConvexHullArea = Geometry.getConvexHullArea(hull);
+        System.out.println("2. Convex Hull length: " + convexHullLength);
+        System.out.println("3. Convex Hull Area: " + getConvexHullArea);
+
     }
 }
